@@ -1,0 +1,235 @@
+/* Dark Mode Enforced */
+
+:root {
+    --bg-primary: #0a0a0a;
+    --text-primary: #ffffff;
+    --accent-blue: #00d4ff;
+    --accent-purple: #7b2cbf;
+}
+
+
+/* Moving Cloud Background */
+
+.stars {
+    background: radial-gradient(2px 2px at 20px 30px, #eee, transparent), radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.8), transparent), radial-gradient(1px 1px at 90px 40px, #fff, transparent), radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.6), transparent), radial-gradient(2px 2px at 160px 30px, #fff, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: twinkle 3s linear infinite;
+}
+
+.clouds {
+    background: linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.1) 50%), linear-gradient(90deg, rgba(100, 150, 255, 0.05) 0%, transparent 50%);
+    animation: drift 20s linear infinite;
+}
+
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes drift {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* Professional Animations */
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+}
+
+@keyframes glow-blue {
+    0%,
+    100% {
+        box-shadow: 0 0 5px #00d4ff, 0 0 10px #00d4ff;
+    }
+    50% {
+        box-shadow: 0 0 20px #00d4ff, 0 0 30px #00d4ff;
+    }
+}
+
+@keyframes glow-purple {
+    0%,
+    100% {
+        box-shadow: 0 0 5px #7b2cbf, 0 0 10px #7b2cbf;
+    }
+    50% {
+        box-shadow: 0 0 20px #7b2cbf, 0 0 30px #7b2cbf;
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+}
+
+.btn-cta {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-cta::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-cta:active::before {
+    width: 300px;
+    height: 300px;
+    animation: ripple 0.6s linear;
+}
+
+.btn-cta:hover {
+    transform: scale(1.05) translateY(-2px);
+    animation: glow-blue 1.5s infinite;
+}
+
+#signup-btn:hover {
+    animation: glow-purple 1.5s infinite;
+}
+
+
+/* Top Nav Styles (Holographic, Active Glow) */
+
+.top-nav-link {
+    position: relative;
+}
+
+.top-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-blue);
+    transition: width 0.3s ease;
+    border-radius: 1px;
+}
+
+.top-nav-link:hover::after,
+.top-nav-link.active::after {
+    width: 100%;
+}
+
+.top-nav-link.animate-pulse {
+    animation: glow-blue 2s infinite alternate;
+}
+
+
+/* Bottom Nav (Unchanged) */
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #00d4ff;
+    transition: width 0.3s ease;
+    border-radius: 1px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.animate-pulse {
+    animation: glow-blue 2s infinite alternate;
+}
+
+
+/* Scroll Reveals */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal.scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.scale.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hover-holo:hover {
+    filter: drop-shadow(0 0 8px #00d4ff);
+    border-color: #00d4ff !important;
+}
+
+
+/* Performance */
+
+body>div[class*="stars"],
+body>div[class*="clouds"],
+.feature-card,
+.testimonial-card,
+.btn-cta {
+    will-change: transform, opacity;
+}

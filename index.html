@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aether Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aether-blue': '#00d4ff',
+                        'aether-purple': '#7b2cbf',
+                    },
+                    backdropBlur: {
+                        xs: '2px'
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'monospace']
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+
+<body class="bg-black text-white font-orbitron min-h-screen overflow-x-hidden relative">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+    <!-- Moving Cloud Background -->
+    <div class="stars fixed inset-0 z-0 opacity-30 pointer-events-none"></div>
+    <div class="clouds fixed inset-0 z-0 opacity-20 pointer-events-none"></div>
+
+    <!-- Enhanced Nav with Active States -->
+    <nav id="nav" class="fixed bottom-4 left-4 z-50 hidden">
+        <div class="bg-black/50 backdrop-blur-xs rounded-full p-2 shadow-2xl border border-aether-blue/30">
+            <ul class="flex space-x-2">
+                <li><a href="#home" class="nav-link text-xs font-bold px-3 py-1 block text-gray-300 hover:text-aether-blue transition-all relative active" data-section="home">Home</a></li>
+                <li><a href="#features" class="nav-link text-xs font-bold px-3 py-1 block text-gray-300 hover:text-aether-blue transition-all relative" data-section="features">Features</a></li>
+                <li><a href="#about" class="nav-link text-xs font-bold px-3 py-1 block text-gray-300 hover:text-aether-blue transition-all relative" data-section="about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative z-10 px-4">
+        <div class="text-center max-w-4xl mx-auto animate-fade-in">
+            <h1 class="text-6xl md:text-8xl font-black mb-6 text-white drop-shadow-2xl">Aether Portal</h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">Unlock the future of AI. Seamless, intuitive, infinite.</p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                <button id="login-btn" class="btn-cta bg-aether-blue text-black px-10 py-4 rounded-full font-bold text-lg shadow-lg relative overflow-hidden">Login</button>
+                <button id="signup-btn" class="btn-cta border-2 border-aether-purple text-aether-purple px-10 py-4 rounded-full font-bold text-lg relative overflow-hidden animate-pulse">Signup</button>
+            </div>
+            <lottie-player src="portal.json" background="transparent" speed="1" loop autoplay class="w-48 h-48 mx-auto opacity-70 animate-spin-slow" onLoad="console.log('Lottie loaded')"></lottie-player>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-24 px-4 bg-black/20 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 text-white">Aether Nodes</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-black/30 backdrop-blur-sm p-8 rounded-xl border border-aether-blue/20 hover:border-aether-blue/50 transition-all hover:-translate-y-2 cursor-pointer feature-card">
+                    <span class="text-4xl mb-6 block">🔮</span>
+                    <h3 class="text-2xl font-semibold mb-4 text-white">Neural Insights</h3>
+                    <p class="text-gray-300">AI-driven predictions in real-time.</p>
+                </div>
+                <div class="bg-black/30 backdrop-blur-sm p-8 rounded-xl border border-aether-blue/20 hover:border-aether-blue/50 transition-all hover:-translate-y-2 cursor-pointer feature-card">
+                    <span class="text-4xl mb-6 block">⚡</span>
+                    <h3 class="text-2xl font-semibold mb-4 text-white">Quantum Speed</h3>
+                    <p class="text-gray-300">Process at light-speed efficiency.</p>
+                </div>
+                <div class="bg-black/30 backdrop-blur-sm p-8 rounded-xl border border-aether-blue/20 hover:border-aether-blue/50 transition-all hover:-translate-y-2 cursor-pointer feature-card">
+                    <span class="text-4xl mb-6 block">🌐</span>
+                    <h3 class="text-2xl font-semibold mb-4 text-white">Holo-Interface</h3>
+                    <p class="text-gray-300">Immersive 3D interactions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="about" class="py-24 px-4 bg-gradient-to-b from-transparent to-black/50 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 text-white">Voices from the Aether</h2>
+            <div class="space-y-10">
+                <div class="bg-black/40 backdrop-blur-md p-10 rounded-2xl border border-aether-purple/30 text-center max-w-2xl mx-auto hover:scale-105 transition-all testimonial-card">
+                    <p class="text-lg italic mb-6 text-gray-300">"Aether transformed my workflow—pure magic!"</p>
+                    <p class="font-semibold text-aether-purple">- Dr. Elara Voss</p>
+                </div>
+                <div class="bg-black/40 backdrop-blur-md p-10 rounded-2xl border border-aether-purple/30 text-center max-w-2xl mx-auto hover:scale-105 transition-all testimonial-card">
+                    <p class="text-lg italic mb-6 text-gray-300">"Futuristic yet accessible. Game-changer."</p>
+                    <p class="font-semibold text-aether-purple">- Alex Rivera</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-12 text-gray-400 border-t border-gray-800 relative z-10">
+        Enter the Aether © 2025
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
