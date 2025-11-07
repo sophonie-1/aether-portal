@@ -6,7 +6,7 @@ This is a single-page, high-impact landing interface for the proprietary AI syst
 
 **Tech Stack**: Vanilla HTML/CSS/JS (no frameworks for lightweight performance ~15KB gzipped). Tailwind CSS via CDN for robust utilities, Lottie via CDN for hero accent, IntersectionObserver for scroll interactions.
 
-**Live Demo**: [Deploy on GitHub Pages](https://github.com/sophonie-1/aether-portal.git) *(Replace with actual link.)*
+**Live Demo**: [Deploy on GitHub Pages](https://sophonie-1.github.io/aether-portal/) *(Replace with actual link.)*
 
 **GitHub Repo**: [https://github.com/sophonie-1/aether-portal.git](https://github.com/sophonie-1/aether-portal.git) *(Public repo with source + assets.)*
 
