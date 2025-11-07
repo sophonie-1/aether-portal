@@ -42,8 +42,19 @@
     <div class="stars fixed inset-0 z-0 opacity-30 pointer-events-none"></div>
     <div class="clouds fixed inset-0 z-0 opacity-20 pointer-events-none"></div>
 
-    <!-- Enhanced Nav with Active States -->
-    <nav id="nav" class="fixed bottom-4 left-4 z-50 hidden">
+    <!-- Top Navbar -->
+    <nav id="top-nav" class="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-aether-blue/20 hidden">
+        <div class="max-w-6xl mx-auto px-4">
+            <ul class="flex justify-center space-x-8 py-4">
+                <li><a href="#home" class="top-nav-link text-sm font-bold text-gray-300 hover:text-aether-blue transition-all relative active" data-section="home">Home</a></li>
+                <li><a href="#features" class="top-nav-link text-sm font-bold text-gray-300 hover:text-aether-blue transition-all relative" data-section="features">Features</a></li>
+                <li><a href="#about" class="top-nav-link text-sm font-bold text-gray-300 hover:text-aether-blue transition-all relative" data-section="about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Corner Nav -->
+    <nav id="bottom-nav" class="fixed bottom-4 left-4 z-50 hidden">
         <div class="bg-black/50 backdrop-blur-xs rounded-full p-2 shadow-2xl border border-aether-blue/30">
             <ul class="flex space-x-2">
                 <li><a href="#home" class="nav-link text-xs font-bold px-3 py-1 block text-gray-300 hover:text-aether-blue transition-all relative active" data-section="home">Home</a></li>
@@ -54,7 +65,7 @@
     </nav>
 
     <!-- Hero -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative z-10 px-4">
+    <section id="home" class="min-h-screen flex items-center justify-center relative z-10 px-4 pt-20">
         <div class="text-center max-w-4xl mx-auto animate-fade-in">
             <h1 class="text-6xl md:text-8xl font-black mb-6 text-white drop-shadow-2xl">Aether Portal</h1>
             <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">Unlock the future of AI. Seamless, intuitive, infinite.</p>
@@ -62,7 +73,7 @@
                 <button id="login-btn" class="btn-cta bg-aether-blue text-black px-10 py-4 rounded-full font-bold text-lg shadow-lg relative overflow-hidden">Login</button>
                 <button id="signup-btn" class="btn-cta border-2 border-aether-purple text-aether-purple px-10 py-4 rounded-full font-bold text-lg relative overflow-hidden animate-pulse">Signup</button>
             </div>
-            <lottie-player src="portal.json" background="transparent" speed="1" loop autoplay class="w-48 h-48 mx-auto opacity-70 animate-spin-slow" onLoad="console.log('Lottie loaded')"></lottie-player>
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_yf5kwwzs.json" background="transparent" speed="1" loop autoplay class="w-48 h-48 mx-auto opacity-70 animate-spin-slow" onLoad="console.log('Lottie loaded via CDN')"></lottie-player>
         </div>
     </section>
 
